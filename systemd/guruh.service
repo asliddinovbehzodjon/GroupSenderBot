@@ -8,7 +8,7 @@ Type=simple
 User=root
 Group=root
 WorkingDirectory=/guruh
-ExecStart=/guruh/env/bin/python /guruh/app.py
+ExecStart=/guruh/venv/bin/python3.11 /guruh/app.py
 RestartSec=10
 Restart=always
 
