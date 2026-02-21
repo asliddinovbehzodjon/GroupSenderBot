@@ -46,21 +46,22 @@ async def start(message:types.Message,state:FSMContext):
         counter = 0
         users = await get_all_users()
         print(users)
-        try:
+        
             
-            for user in users:
-                print(user[1])
-                await bot.copy_message(
+        for user in users:
+                
+                try:
+                    await bot.copy_message(
                 chat_id=user[1],
                 from_chat_id=message.chat.id,
                 message_id=message.message_id,
                 
             )
-                await asyncio.sleep(1)
-                counter+=1
-        except Exception as e: 
-            print(e)
-            pass
+                    await asyncio.sleep(1)
+                    counter+=1
+                except Exception as e:
+                    print(e)
+       
         await message.answer(html.bold(f"{counter} ta guruhga xabar yuborildi!"))
         await state.clear()
 
