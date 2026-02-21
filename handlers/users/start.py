@@ -45,6 +45,7 @@ async def start(message:types.Message,state:FSMContext):
     else:
         counter = 0
         users = await get_all_users()
+        print(users)
         try:
             
             for user in users:
