@@ -56,7 +56,8 @@ async def start(message:types.Message,state:FSMContext):
             )
                 await asyncio.sleep(1)
                 counter+=1
-        except:
+        except Exception as e: 
+            print(e)
             pass
         await message.answer(html.bold(f"{counter} ta guruhga xabar yuborildi!"))
         await state.clear()
