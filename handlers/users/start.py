@@ -51,7 +51,7 @@ async def start(message:types.Message,state:FSMContext):
         for user in users:
                 
                 try:
-                    await bot.copy_message(
+                    await bot.forward_message(
                 chat_id=user[1],
                 from_chat_id=message.chat.id,
                 message_id=message.message_id,
