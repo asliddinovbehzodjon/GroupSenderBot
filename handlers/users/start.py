@@ -49,6 +49,7 @@ async def start(message:types.Message,state:FSMContext):
         try:
             
             for user in users:
+                print(user[1])
                 await bot.copy_message(
                 chat_id=user[1],
                 from_chat_id=message.chat.id,
